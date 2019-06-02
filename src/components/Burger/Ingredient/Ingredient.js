@@ -2,6 +2,7 @@ import React from "react";
 import classes from "Ingredient.module.css";
 
 const Ingredient = props => {
+  // TODO: Add prop type validation
   let ingredient;
 
   switch (props.type) {
