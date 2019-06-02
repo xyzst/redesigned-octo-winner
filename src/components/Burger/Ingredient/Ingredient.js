@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "Ingredient.module.css";
+import PropTypes from "prop-types";
 
 const Ingredient = props => {
-  // TODO: Add prop type validation
   let ingredient;
 
   switch (props.type) {
@@ -33,6 +33,10 @@ const Ingredient = props => {
       ingredient = null;
   }
   return ingredient;
+};
+
+Ingredient.propTypes = {
+  type: PropTypes.string.isRequired
 };
 
 export default Ingredient;
