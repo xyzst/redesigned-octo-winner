@@ -2,6 +2,19 @@
 
 ## Introduction
 
+A simple application that will allow a user to build an item (burger) based on several ingredients, calculate it's final cost, and allow the user to buy or checkout the item.
+
+## Build
+
+1. Checkout the repository
+2. \$ npm install
+3. \$ npm run start
+4. Go to http://localhost:3000/
+
+## Dependencies
+
+TBA
+
 ## Component Tree/Structure
 
 ```
