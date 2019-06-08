@@ -13,7 +13,7 @@ A simple application that will allow a user to build an item (burger) based on s
 
 ## Dependencies
 
-TBA
+1. React.js
 
 ## Component Tree/Structure
 
