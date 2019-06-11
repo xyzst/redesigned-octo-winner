@@ -14,6 +14,7 @@ A simple application that will allow a user to build an item (burger) based on s
 ## Dependencies
 
 1. React.js
+2. Webpack
 
 ## Component Tree/Structure
 
