@@ -15,6 +15,7 @@ A simple application that will allow a user to build an item (burger) based on s
 
 1. React.js
 2. Webpack
+3. ...
 
 ## Component Tree/Structure
 
