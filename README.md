@@ -70,3 +70,7 @@ A simple application that will allow a user to build an item (burger) based on s
   - Manage in BurgerBuilder component
 
 ## Components vs Containers
+
+## Todo
+
+1. Implement checkout feature (http)
