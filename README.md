@@ -71,6 +71,8 @@ A simple application that will allow a user to build an item (burger) based on s
 
 ## Components vs Containers
 
+`Aux` and `Layout` are examples of containers. Any component defined outside of the `hoc` directory is a component (stateful and pure/stateless)
+
 ## Todo
 
 1. Implement checkout feature (http)
