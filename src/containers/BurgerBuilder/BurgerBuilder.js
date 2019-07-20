@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Aux from "../../hoc/Aux/Aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -14,6 +14,7 @@ const INGREDIENT_PRICES = {
   meat: 1.3,
   bacon: 0.7
 };
+
 class BurgerBuilder extends Component {
   state = {
     ingredients: null,
@@ -29,20 +30,20 @@ class BurgerBuilder extends Component {
       .get("/ingredients.json")
       .then(response => {
         console.log(response);
-        this.setState({ ingredients: response.data });
+        this.setState({ingredients: response.data});
         console.log(this.state.ingredients);
       })
       .catch(error => {
-        this.setState({ error: true });
+        this.setState({error: true});
       });
   }
 
   purchaseHandler = () => {
-    this.setState({ purchasing: true });
+    this.setState({purchasing: true});
   };
 
   purchaseCancelHandler = () => {
-    this.setState({ purchasing: false });
+    this.setState({purchasing: false});
   };
 
   purchaseContinueHandler = () => {
@@ -61,15 +62,15 @@ class BurgerBuilder extends Component {
       deliveryMethod: "fastest"
     };
 
-    this.setState({ loading: true });
+    this.setState({loading: true});
 
     axios
       .post("/orders.json", order)
       .then(response => {
-        this.setState({ loading: false, purchasing: false });
+        this.setState({loading: false, purchasing: false});
       })
       .catch(err => {
-        this.setState({ loading: false, purchasing: false });
+        this.setState({loading: false, purchasing: false});
       });
   };
 
@@ -82,7 +83,7 @@ class BurgerBuilder extends Component {
         return sum + element;
       }, 0);
 
-    this.setState({ purchasable: sum > 0 });
+    this.setState({purchasable: sum > 0});
   };
 
   addIngredientHandler = type => {
@@ -97,7 +98,7 @@ class BurgerBuilder extends Component {
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
 
-    this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
+    this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
     this.updatePurchaseState(updatedIngredients);
   };
 
@@ -116,7 +117,7 @@ class BurgerBuilder extends Component {
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice - priceDeduction;
 
-    this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
+    this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
     this.updatePurchaseState(updatedIngredients);
   };
 
@@ -131,12 +132,12 @@ class BurgerBuilder extends Component {
     let burger = this.state.error ? (
       <p>Ingredients cannot be loaded!</p>
     ) : (
-      <Spinner />
+      <Spinner/>
     );
     if (this.state.ingredients) {
       burger = (
         <Aux>
-          <Burger ingredients={this.state.ingredients} />
+          <Burger ingredients={this.state.ingredients}/>
           <BuildControls
             ingredientAdded={this.addIngredientHandler}
             ingredientDeducted={this.removeIngredientHandler}
@@ -156,7 +157,7 @@ class BurgerBuilder extends Component {
         />
       );
       if (this.state.loading) {
-        orderSummary = <Spinner />;
+        orderSummary = <Spinner/>;
       }
     }
     return (
