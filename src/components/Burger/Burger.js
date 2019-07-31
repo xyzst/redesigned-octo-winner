@@ -1,8 +1,10 @@
 import React from "react";
+import {withRouter} from 'react-router-dom';
 import Ingredient from "./Ingredient/Ingredient";
 import classes from "./Burger.module.css";
 
 const Burger = props => {
+  console.log(props); // without higher order component (withRouter) would need to pass router props manually
   let transformedIngredients = Object.keys(props.ingredients)
     .map(x => {
       return [...Array(props.ingredients[x])].map((_, i) => {
@@ -24,4 +26,4 @@ const Burger = props => {
   );
 };
 
-export default Burger;
+export default withRouter(Burger);

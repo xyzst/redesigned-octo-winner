@@ -26,6 +26,7 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props)
     axios
       .get("/ingredients.json")
       .then(response => {
@@ -47,31 +48,32 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice, // ideally, should be calculated on the server side!
-      customer: {
-        name: "Darren Rambaud",
-        address: {
-          street: "1 Evil Corporate Way",
-          zipCode: "78704",
-          country: "USA"
-        },
-        email: "evil@e-corp-usa.com"
-      },
-      deliveryMethod: "fastest"
-    };
-
-    this.setState({loading: true});
-
-    axios
-      .post("/orders.json", order)
-      .then(response => {
-        this.setState({loading: false, purchasing: false});
-      })
-      .catch(err => {
-        this.setState({loading: false, purchasing: false});
-      });
+    // const order = {
+    //   ingredients: this.state.ingredients,
+    //   price: this.state.totalPrice, // ideally, should be calculated on the server side!
+    //   customer: {
+    //     name: "Darren Rambaud",
+    //     address: {
+    //       street: "1 Evil Corporate Way",
+    //       zipCode: "78704",
+    //       country: "USA"
+    //     },
+    //     email: "evil@e-corp-usa.com"
+    //   },
+    //   deliveryMethod: "fastest"
+    // };
+    //
+    // this.setState({loading: true});
+    //
+    // axios
+    //   .post("/orders.json", order)
+    //   .then(response => {
+    //     this.setState({loading: false, purchasing: false});
+    //   })
+    //   .catch(err => {
+    //     this.setState({loading: false, purchasing: false});
+    //   });
+    this.props.history.push('/checkout');
   };
 
   updatePurchaseState = ingredients => {
