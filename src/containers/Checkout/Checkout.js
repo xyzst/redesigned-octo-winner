@@ -7,7 +7,7 @@ class Checkout extends Component {
       salad: 1,
       meat: 1,
       cheese: 1,
-      bacon: 1
+      bacon: 0
     }
   };
 
