@@ -11,6 +11,9 @@ A simple application that will allow a user to build an item (burger) based on s
 3. \$ npm run start
 4. Go to http://localhost:3000/
 
+NOTE: node version 8.xx.x (carbon lts) works the best at the moment. Need to update project to be compatible with 
+later versions of node and update dependencies to use the latest/most secure versions
+
 ## Dependencies
 
 1. React.js
