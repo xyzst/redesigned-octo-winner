@@ -1,14 +1,12 @@
-import React from "react";
-import burgerLogo from "../../assets/images/burger-logo.png"; // webpack will handle optimizing and provide appropriate scoping
-import classes from "./Logo.module.css";
+import React from 'react';
 
-const Logo = props => (
-  <div className={classes.Logo}>
-    <img
-      src={burgerLogo}
-      alt="A fictionalized version of an American Hamburger"
-    />
+import burgerLogo from '../../assets/images/burger-logo.png';
+import classes from './Logo.css';
+
+const logo = (props) => (
+  <div className={classes.Logo} style={{height: props.height}}>
+    <img src={burgerLogo} alt="MyBurger"/>
   </div>
 );
 
-export default Logo;
+export default logo;
